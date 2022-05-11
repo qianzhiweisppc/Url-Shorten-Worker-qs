@@ -127,7 +127,7 @@ async function handleRequest(request) {
   console.log(path)
   if(!path){
 
-    const html= await fetch("https://cdn.jsdelivr.net/gh/qianzhiweisppc/qianzhiweisppc.github.io@master/shorturls/"+config.theme+"/index.html")
+    const html= await fetch("https://cdn.jsdelivr.net/gh/qianzhiweisppc/Url-Shorten-Worker-qs@master/shorturls/"+config.theme+"/index.html")
     
     return new Response(await html.text(), {
     headers: {
@@ -149,7 +149,7 @@ async function handleRequest(request) {
 
   if (location) {
     if (config.no_ref=="on"){
-      let no_ref= await fetch("https://cdn.jsdelivr.net/gh/qianzhiweisppc/qianzhiweisppc.github.io@master/shorturls/no-ref.html")
+      let no_ref= await fetch("https://cdn.jsdelivr.net/gh/qianzhiweisppc/Url-Shorten-Worker-qs@master/shorturls/no-ref.html")
       no_ref=await no_ref.text()
       no_ref=no_ref.replace(/{Replace}/gm, location)
       return new Response(no_ref, {
